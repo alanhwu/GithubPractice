@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 
-public class Stack<T> {
+public class QueuueWu<T> {
 
-	private ArrayList<T> data;
+	private Stack<T> data;
 	private int size;
 
-	public Stack() {
-		data = new ArrayList<T>();
+	public QueuueWu() {
+		data = new Stack<T>();
 	}
 
-	public void push(T t) {
-		data.add(t);
+	public void add(T t) {
+		data.push(t);
 		size++;
 	}
 
-	public T pop() {
+	public T remove() {
+		T t = data.pop();
 		size--;
-		return data.remove(size);
+		return t;
 	}
 
 	// write the pop method
@@ -25,7 +26,7 @@ public class Stack<T> {
 	// write the method peek which returns the last element
 	// but does not remove it from the list
 	public T peek() {
-		return data.get(size);
+		return data.get(0);
 	}
 
 	public boolean isEmpty() {
