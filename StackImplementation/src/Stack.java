@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
-public class Stack<T> {
+public class Stack<TBA_TYPE> { //--> <T> allows you to generate the TYPE stored in the class
 
-	private ArrayList<T> data;
+	private ArrayList<TBA_TYPE> data; // <T> works because of line 3 which represents the TYPE as T
 	private int size;
 
 	public Stack() {
-		data = new ArrayList<T>();
+		data = new ArrayList<TBA_TYPE>();
 	}
 
-	public void push(T t) {
+	public void push(TBA_TYPE t) {
 		data.add(t);
 		size++;
 	}
 
-	public T pop() {
+	public TBA_TYPE pop() {
 		size--;
 		return data.remove(size);
 	}
@@ -24,7 +24,7 @@ public class Stack<T> {
 
 	// write the method peek which returns the last element
 	// but does not remove it from the list
-	public T peek() {
+	public TBA_TYPE peek() {
 		return data.get(size);
 	}
 

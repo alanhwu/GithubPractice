@@ -2,13 +2,30 @@ import java.util.ArrayList;
 
 public class QueuueWu<T> {
 
-	private Stack<T> data;
+	private Stack<T> data1;
+	private Stack<T> data2;
 	private int size;
 
 	public QueuueWu() {
-		data = new Stack<T>();
+		data1 = new Stack<T>();
+		data2 = new Stack<T>();
 	}
 
+	public T DCue(){
+		if(data2.isEmpty()){
+		while(!data1.isEmpty()){
+			data2.push(data1.pop());
+		}
+		}
+		return data2.pop();
+	}
+	
+	
+	
+	
+	
+	
+	
 	public void add(T t) {
 		data.push(t);
 		size++;
