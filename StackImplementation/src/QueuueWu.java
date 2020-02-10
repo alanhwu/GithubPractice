@@ -27,12 +27,12 @@ public class QueuueWu<T> {
 	
 	
 	public void add(T t) {
-		data.push(t);
+		data1.push(t);
 		size++;
 	}
 
 	public T remove() {
-		T t = data.pop();
+		T t = data1.pop();
 		size--;
 		return t;
 	}
@@ -43,11 +43,11 @@ public class QueuueWu<T> {
 	// write the method peek which returns the last element
 	// but does not remove it from the list
 	public T peek() {
-		return data.get(0);
+		return data1.get(0);
 	}
 
 	public boolean isEmpty() {
-		return (data.size() == 0);
+		return (data1.size() == 0);
 	}
 
 	public int size() {
@@ -55,7 +55,7 @@ public class QueuueWu<T> {
 	}
 	
 	public String toString(){
-		return data.toString();
+		return data1.toString();
 	}
 
 }

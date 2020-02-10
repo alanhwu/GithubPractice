@@ -25,7 +25,7 @@ public class Stack<TBA_TYPE> { //--> <T> allows you to generate the TYPE stored 
 	// write the method peek which returns the last element
 	// but does not remove it from the list
 	public TBA_TYPE peek() {
-		return data.get(size);
+		return data.get(size-1);
 	}
 
 	public boolean isEmpty() {
