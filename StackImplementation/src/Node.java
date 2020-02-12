@@ -1,7 +1,7 @@
 
 public class Node<T> {
 	private T data;
-	private Node next;
+	public Node next;
 	
 	public Node(T t){
 		data = t;
@@ -11,4 +11,6 @@ public class Node<T> {
 	public Node next(){
 		return next;
 	}
+	
+	
 }
