@@ -16,27 +16,27 @@ public class LinkedList<T> { //<T> allows us to useand data type
 		return size;
 	}
 	
-	public Node peek() {
+	public Node<T> peek() {
 		return head;
 	}
 	
 	//add a node at the end of the list
 	
 	public void add(T t) {
-		if(head == null) {
-			Node n = new Node(t);
+		if(head == null) { //check for null pointer
+			Node<T> n = new Node<T>(t); //if there's nothing, add just set the head to the new node
 			head = n;
 		}
 		
-		Node temp = head;
-		
+		Node<T> temp = head;
+		//aa
 
 		while(temp.next!=null) {
 			//we know it's not the end of the list unless the next node reference
 			// is pointing to null
 			temp = temp.next;
 		}
-		temp.next = new Node(t); //done!
+		temp.next = new Node<T>(t); //done!
 		
 		size++;
 	}
@@ -45,40 +45,53 @@ public class LinkedList<T> { //<T> allows us to useand data type
 		//head = new Node<T>(t, head);
 		
 		if(head == null){
-			head = new Node(t);
+			head = new Node<T>(t);
+			
+			
 		}else{
-			Node n = new Node(t);
-			n.next = head;
-			head = n;
+			Node<T> n = new Node<T>(t);
+			n.next = head.next;
+			head.next = n;
 		}
 		size++;
 	}
 	
-	public Node remove() {
+	public Node<T> remove() {
 		if(size==0){ //return null if it's empty
 			return null;
 		}else{
-			head = head.next;
-			head.next = head.next.next;
+			Node<T> temp = head;
+			head = temp.next;
 			size--;
+			return head;
 		}
-		return head;
+	
 	}
 	
 	
 	//remove Node at index i
 	//REQUIRES: i<size
 	public Node remove(int i) {
+		Node<T> temp = head;
 		for(int j = 0; j<i; j++){
-			head = head.next;
-			head = head.next.next;
+			head = temp.next;
+			head = temp.next.next;
 		}
 		size--;
 		return head;
 	}
 	
-	public String toString(){
-		return head.toString();
+	 public String toString(){
+		String result = "";
+        Node current = head;
+        while(current.next() != null){
+            result += current.next().toString();
+            if(current.next() != null){
+                 result += ", ";
+            }
+            current = current.next();
+        }
+        return ("List: " + result.toString()).toString();
 		}
 	//ISCIRCULAR IS ON THE EXAM
 	
