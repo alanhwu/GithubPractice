@@ -60,6 +60,7 @@ public class LinkedList<T> { //<T> allows us to useand data type
 		}else{
 			head = head.next;
 			head.next = head.next.next;
+			size--;
 		}
 		return head;
 	}
@@ -72,6 +73,7 @@ public class LinkedList<T> { //<T> allows us to useand data type
 			head = head.next;
 			head = head.next.next;
 		}
+		size--;
 		return head;
 	}
 	
