@@ -29,7 +29,7 @@ public class LinkedList<T> { //<T> allows us to useand data type
 		}
 		
 		Node<T> temp = head;
-		
+		//aa
 
 		while(temp.next!=null) {
 			//we know it's not the end of the list unless the next node reference
