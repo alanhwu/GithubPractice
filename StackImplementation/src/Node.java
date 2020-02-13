@@ -12,5 +12,8 @@ public class Node<T> {
 		return next;
 	}
 	
+	public String toString(){
+		return data + "";
+	}
 	
 }
