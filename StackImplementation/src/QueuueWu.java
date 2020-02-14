@@ -42,9 +42,11 @@ public class QueuueWu<T> {
 
 	// write the method peek which returns the last element
 	// but does not remove it from the list
+
 //	public T peek() {
 //		return data1.get(0);
 //	}
+
 
 	public boolean isEmpty() {
 		return (data1.size() == 0);
